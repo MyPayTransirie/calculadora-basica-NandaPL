@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import net.objecthunter.exp4j.Expression
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -42,6 +45,28 @@ class MainActivity : AppCompatActivity() {
                 entrada.text = expressao.substring(0, expressao.length-1) //verifica o comprimento da string e retira um elemento do tamanho
             }
             resultado.text = ""
+        }
+
+        //cálculo das expressões
+        igual.setOnClickListener {
+            //o try{} catch() realiza tratamento da conversão de string para inteiro
+            try {
+                //ExpressionBuilder() - responsavel por executar os cálculos dos valores de entrada
+                val expressao = ExpressionBuilder(entrada.text.toString()).build()
+
+                val solucao = expressao.evaluate() //tratamento para avaliação
+                val longResultado = solucao.toLong() //passando o resultado para long de forma a rpresentar um inteiro
+
+                if (solucao == longResultado.toDouble()) {
+                    resultado.text = longResultado.toString()
+                } else {
+                    resultado.text = solucao.toString()
+                }
+
+            }catch (e: Exception){
+
+            }
+
         }
     }
 }
