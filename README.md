@@ -42,3 +42,5 @@ Explique de forma resumida as dificuldades que teve e como resolveu.
    - 10/09: Estou buscando uma forma de realizar uma implementação mais simplificada e direta, talvez por meio de alguma a biblioteca.
    - 11/09: Buscando na internet e vendo alguns vídeos encontrei a respeito de uma biblioteca que (exp4j) que já realiza o tratamento da avaliação e validação de expressões
    e funções, pois já vem com um conjunto padrão de funções e operadores integrados.
+2. **Alertar inválido**
+   -Tive dificuldade para implementar o alerta de inválido
