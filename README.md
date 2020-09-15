@@ -25,10 +25,10 @@ Abaixo segue alguns passos sugeridos para criar a aplicação:
 
 | Passo | Completou? |
 | ----- | ---------- |
-|   1. Projeto            | **sim**  |
-|   2. Layout             | **sim**  |
-|   3. Button Listeners   |  **sim** |
-|   4. Avaliar Expressão  |            |
+|   1. Projeto            | **sim** |
+|   2. Layout             | **sim** |
+|   3. Button Listeners   | **sim** |
+|   4. Avaliar Expressão  | **sim** |
 |   5. Alertar inválido   |            |
 
 ----------
@@ -37,8 +37,10 @@ Abaixo segue alguns passos sugeridos para criar a aplicação:
 Explique de forma resumida as dificuldades que teve e como resolveu.
 
 > Escreva: "não tive dificuldades" se for o caso e apague o resto
-1. **Importar biblioteca X**
-   - Tive dificuldade em entender quanto ao método para realização dos cálculos.
-   - Estou buscando uma forma de realizar uma implementação mais simplificada e direta, talvez por meio de alguma a biblioteca.
-2. **Avaliação de expressão**
-   - Resolvi implementar minha própria e por não conhecer Kotlin demorei bastante...
+1. **Avaliação de Expressão para realização dos cálculos**
+   - 10/09: Tive dificuldade em entender quanto ao método para realização dos cálculos, a avaliação da expressão.
+   - 10/09: Estou buscando uma forma de realizar uma implementação mais simplificada e direta, talvez por meio de alguma a biblioteca.
+   - 11/09: Buscando na internet e vendo alguns vídeos encontrei a respeito de uma biblioteca que (exp4j) que já realiza o tratamento da avaliação e validação de expressões
+   e funções, pois já vem com um conjunto padrão de funções e operadores integrados.
+2. **Alertar inválido**
+   - Tive dificuldade para implementar o alerta de inválido
