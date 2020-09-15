@@ -1,15 +1,18 @@
 package com.example.calculadora
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.lang.Exception
+import net.objecthunter.exp4j.ValidationResult
+
+class Regex
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "Assert")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         apagar.setOnClickListener {
             val expressao = entrada.text.toString()
             if(expressao.isNotBlank()){ //verifica se a string de entrada não está vazia
-                entrada.text = expressao.substring(0, expressao.length-1) //verifica o comprimento da string e retira um elemento do tamanho
+                entrada.text = expressao.substring(0, expressao.length - 1) //verifica o comprimento da string e retira um elemento do tamanho
             }
             resultado.text = ""
         }
@@ -56,6 +59,9 @@ class MainActivity : AppCompatActivity() {
 
                 val solucao = expressao.evaluate() //tratamento para avaliação
                 val longResultado = solucao.toLong() //passando o resultado para long de forma a rpresentar um inteiro
+                val res = expressao.validate();
+                assert(res.isValid);
+                //assert(1, {res.errors.size});
 
                 if (solucao == longResultado.toDouble()) {
                     resultado.text = longResultado.toString()
@@ -63,11 +69,12 @@ class MainActivity : AppCompatActivity() {
                     resultado.text = solucao.toString()
                 }
 
-            }catch (e: Exception){
-
+            }catch (e: Exception) {
+                Toast.makeText(this, "Inválido", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 }
+
+
 
